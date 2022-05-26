@@ -1,30 +1,41 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import Aficion from './components/aficion';
 import './App.css';
 
-function App() {
-  let [numero1, setNumero1] = useState(0);
-  let [numero2, setNumero2] = useState(0);
-  let [resultado, setResultado] = useState(0);
-  const sumar = () => {
-    setResultado(Number(numero1) + Number(numero2));
-  };
+const App = () => {
+const [aficiones, setAficiones] = useState({});
+  const reyesGodos = [
+    {
+      nombre: 'Ataúlfo',
+      aficion: 'comer toros sin pelar',
+    },
+    {
+      nombre: 'Recesvinto',
+      aficion: 'leer a Hegel en arameo',
+    },
+    {
+      nombre: 'Teodorico',
+      aficion: 'la cría del escarabajo en almíbar',
+    },
+  ];
 
-  const modificar = (e) => {
-    if (e.target.name === 'numero1') {
-      setNumero1(e.target.value);
-    } else {
-      setNumero2(e.target.value);
-    }
+  const Siguiente = () => {
+    const random = Math.floor(Math.random() * reyesGodos.length);
+    const rey = reyesGodos[random];
+    console.log(rey);
+    setAficiones(rey);
   };
 
   return (
-    <div className="caja">
-      <input type="number" name='numero1' value={numero1} onChange={modificar} /> +
-      <input type="number" name='numero2' value={numero2} onChange={modificar} /> =
-      <input type="number" value={resultado} readOnly />
-      <button onClick={sumar}>Sumar</button>
-    </div>
-  );
-}
+    <>
+    <button onClick={() => {
+      Siguiente();
+    }}>Siguiente...</button>
 
+    <div className='caja'>
+      <Aficion nombre={aficiones.nombre} aficion={aficiones.aficion} />
+    </div>
+    </>
+  );
+};
 export default App;

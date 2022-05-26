@@ -16,6 +16,11 @@
     font-size: 3rem;
     display: flex;
     align-items: center;
+    border: 1px solid darkred;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    
  }
 
  button{
