@@ -23,7 +23,7 @@
     
  }
 
- button{
+ .button{
     background-color: orangered;
     color: white;
     border: none;
@@ -32,4 +32,24 @@
     font-size: 2rem;
     margin: 10px;
     outline: none;
+ }
+
+ .button:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+ }
+
+ .nombre {
+   font-size: 3rem;
+   margin: 10px;
+   color: darkred;
+ }
+
+ .aficion {
+   font-size: 3rem;
+   margin: 10px;
+   color: green;
  }

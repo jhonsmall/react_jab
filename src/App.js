@@ -28,13 +28,18 @@ const [aficiones, setAficiones] = useState({});
 
   return (
     <>
-    <button onClick={() => {
-      Siguiente();
-    }}>Siguiente...</button>
+      <button
+        className="button"
+        onClick={() => {
+          Siguiente();
+        }}
+      >
+        Siguiente...
+      </button>
 
-    <div className='caja'>
-      <Aficion nombre={aficiones.nombre} aficion={aficiones.aficion} />
-    </div>
+      <div className="caja">
+        <Aficion nombre={aficiones.nombre} aficion={aficiones.aficion} />
+      </div>
     </>
   );
 };
