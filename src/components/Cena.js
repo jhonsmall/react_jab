@@ -9,7 +9,7 @@ const Cena = ({rey, setValor, setReyesData}) => {
   };
 
   const changeValor = (nombre, precio) => {
-    setReyesData((data) => data.filter((rey) => rey.nombre !== nombre));
+    setReyesData(data => data.filter((rey) => rey.nombre !== nombre));
     setValor(valor => valor + precio);
   };
 
